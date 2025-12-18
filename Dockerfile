@@ -1,11 +1,14 @@
 # Base image
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
 
 # App के लिए folder
 WORKDIR /app
 
-# File copy करना
-COPY app.jar app.jar
+# Jar copy
+COPY tstingproject-0.0.1-SNAPSHOT.jar app.jar
 
-# Container start होने पर command
-CMD ["java", "-jar", "app.jar"]
+# Port
+EXPOSE 8080
+
+# Run app
+ENTRYPOINT ["java","-jar","app.jar"]
