@@ -1,5 +1,5 @@
 # Base image
-FROM openjdk:17-jdk-slim
+FROM openjdk:17
 
 # App के लिए folder
 WORKDIR /app
