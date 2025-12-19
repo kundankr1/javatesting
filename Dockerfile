@@ -1,14 +1,14 @@
-# Base image
-FROM openjdk:17
+# Use lightweight OpenJDK 17 image
+FROM openjdk:17-jdk-slim
 
-# App के लिए folder
+# Set working directory
 WORKDIR /app
 
-# Jar copy
+# Copy JAR file
 COPY tstingproject-0.0.1-SNAPSHOT.jar app.jar
 
-# Port
+# Expose application port
 EXPOSE 8080
 
-# Run app
-ENTRYPOINT ["java","-jar","app.jar"]
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
