@@ -1,14 +1,9 @@
-# Use lightweight OpenJDK 17 image
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
-# Set working directory
 WORKDIR /app
 
-# Copy JAR file
-COPY tstingproject-0.0.1-SNAPSHOT.jar app.jar
+COPY target/app.jar app.jar
 
-# Expose application port
 EXPOSE 8080
 
-# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
